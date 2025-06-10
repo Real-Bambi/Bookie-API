@@ -1,12 +1,14 @@
 import express from 'express';
 import mongoose from "mongoose";
+import cors from cors
 import 'dotenv/config'
 import { bookRouter } from './routes/bookRoutes.js';
 
 const app = express();
 
-app.use(express.json())
-app.use(bookRouter)
+app.use(express.json());
+app.use(cors());
+app.use(bookRouter);
 
 const mongoURI = process.env.MONGO_URI;
 
