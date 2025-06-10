@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(bookRouter);
+app.use("/api/v1", bookRouter);
 
 const mongoURI = process.env.MONGO_URI;
 
