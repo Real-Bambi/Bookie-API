@@ -1,4 +1,5 @@
-import { Schema,model } from "mongoose";
+import { Schema,model, plugin } from "mongoose";
+import normalize from "normalize-mongoose";
 
 const bookSchema = new Schema({
     title: {
@@ -31,5 +32,7 @@ const bookSchema = new Schema({
     } 
     
 }, {timestamps: true})
+
+bookSchema.plugin(normalize);
 
 export const Book = model('Book', bookSchema);
